@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Exo', sans-serif;
+}
+:target::before {
+  content: "";
+  display: block;
+  height: 64px; /* Set this to the height of your navigation bar */
+  margin-top: -64px; /* Set this to the negative value of your navigation bar's height */
+}
