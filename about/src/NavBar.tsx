@@ -5,7 +5,7 @@ const Navbar = () => {
     return (
 
 
-        <nav className="bg-zinc-900 z-10 sticky top-0 z-20">
+        <nav className="bg-zinc-900 z-10 sticky top-0 z-20 border-b border-solid border-zinc-800">
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                 <a href="/" className="flex items-center">
                     <img src="/lambda.png" className="h-8 mr-3" alt="Lambda icon"/>

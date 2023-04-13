@@ -23,10 +23,11 @@ const LandingPage = () => {
 
             </div>
             <div className="relative bg-zinc-900 min-h-screen">
-                <Projects/>
+                <Skills/>
             </div>
             <div className="relative bg-zinc-800 min-h-screen">
-                <Skills/>
+                <Projects/>
+
             </div>
             <div className="relative bg-zinc-900 min-h-screen">
                 <About/>

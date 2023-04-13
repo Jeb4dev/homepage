@@ -7,9 +7,21 @@ body {
   padding: 0;
   font-family: 'Exo', sans-serif;
 }
+
 :target::before {
   content: "";
   display: block;
   height: 64px; /* Set this to the height of your navigation bar */
   margin-top: -64px; /* Set this to the negative value of your navigation bar's height */
 }
+
+.custom-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+}
+
+.card-container {
+  @apply text-gray-700 w-full max-w-sm overflow-hidden rounded-2xl bg-zinc-100;
+}
+
