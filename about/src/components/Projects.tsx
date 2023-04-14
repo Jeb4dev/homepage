@@ -29,10 +29,10 @@ export const Projects = () => {
   useEffect(() => {
     fetch(url)
       .then((response) => response.json())
-      .then((data) => {
-        setData(data);
-        originalData = data;
-        handleSort({ target: { value: sortOption } });
+      .then((_data: [Project]) => {
+        setOriginalData(_data);
+        setData(_data);
+        handleSort({ target: { value: sortOption } }, _data);
       });
   }, [url]);
 
@@ -49,35 +49,36 @@ export const Projects = () => {
     }
   };
 
-  const handleSort = (event: { target: { value: string } }) => {
+  const handleSort = (event: { target: { value: string } }, _data?: any) => {
     const sortOption = event.target.value;
     let sortedData;
-    if (originalData) {
+    const sortData: any = originalData ? originalData : _data;
+    if (sortData) {
       switch (sortOption) {
         case "date-new":
-          sortedData = [...originalData].sort(
+          sortedData = [...sortData].sort(
             (a, b) =>
               new Date(b.created).getTime() - new Date(a.created).getTime()
           );
           break;
         case "date-old":
-          sortedData = [...originalData].sort(
+          sortedData = [...sortData].sort(
             (a, b) =>
               new Date(b.created).getTime() - new Date(a.created).getTime()
           );
           break;
         case "name-az":
-          sortedData = [...originalData].sort((a, b) =>
+          sortedData = [...sortData].sort((a, b) =>
             a.name.localeCompare(b.name)
           );
           break;
         case "name-za":
-          sortedData = [...originalData].sort((a, b) =>
+          sortedData = [...sortData].sort((a, b) =>
             b.name.localeCompare(a.name)
           );
           break;
         default:
-          sortedData = [...originalData].sort((a, b) => b.score - a.score);
+          sortedData = [...sortData].sort((a, b) => b.score - a.score);
       }
     }
     if (sortedData !== undefined) {
@@ -93,7 +94,7 @@ export const Projects = () => {
       <div>
         <div className="ui form ">
           <div className="field grid">
-            <div className="flex flex-col md:inline-flex w-full gap-4">
+            <div className="flex flex-col md:flex-row inline-flex w-full gap-4">
               <div className="w-full md:w-[70%]">
                 <input
                   className="block appearance-none w-full bg-zinc-900 text-white border hover:border-gray-500 px-4 py-3 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
