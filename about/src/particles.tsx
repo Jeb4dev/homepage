@@ -11,10 +11,7 @@ export const MyParticles = () => {
     await loadFull(engine);
   }, []);
 
-  const particlesLoaded = useCallback(
-    async (container: Container | undefined) => {},
-    []
-  );
+  const particlesLoaded = useCallback(async () => {}, []);
   return (
     <Particles
       id="tsparticles"
