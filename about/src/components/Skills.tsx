@@ -6,14 +6,7 @@ export const Skills = () => {
     {
       skill: "Backend",
       img: "https://cdn.pixabay.com/photo/2015/06/24/15/45/code-820275__340.jpg",
-      skills: [
-        "Python",
-        "Django",
-        "Flask",
-        "REST API",
-        "Directus",
-        "TypeScript",
-      ],
+      skills: ["Django", "Flask", "REST API", "SQL", "Directus", "TypeScript"],
       learnMore: "backend",
     },
     {
@@ -22,12 +15,10 @@ export const Skills = () => {
         "HTML5",
         "CSS3",
         "Tailwind",
-        "JS",
         "TS",
         "React",
         "Vue",
         "Nuxt",
-        "npm",
         "WordPress",
       ],
       img: "https://cdn.pixabay.com/photo/2018/05/04/20/01/website-3374825__340.jpg",
@@ -60,16 +51,14 @@ export const Skills = () => {
   ];
 
   return (
-    <div id="skills" className="max-w-screen-xl mx-auto p-8 md:px-16">
-      <h1 className="text-4xl font-semibold whitespace-nowrap text-white py-16">
+    <div id="skills" className="max-w-screen-xl mx-auto p-8 md:p-16">
+      <h1 className="text-4xl font-semibold whitespace-nowrap text-white py-8">
         Skills
       </h1>
-      <div className="">
-        <div id="skills" className="custom-grid">
-          {skillData.map((skills) => (
-            <SkillCard key={skills.skill} content={skills} />
-          ))}
-        </div>
+      <div id="skills" className="skill-grid py-8">
+        {skillData.map((skills) => (
+          <SkillCard key={skills.skill} content={skills} />
+        ))}
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ import { AnimatedText } from "./Animation";
 export const HeroSection = () => {
   return (
     <div>
-      <div className="hidden fixed md:flex flex-col items-center justify-center left-6 gap-4 top-0 media-header z-10">
+      <div className="hidden fixed lg:flex flex-col items-center justify-center left-6 gap-4 top-0 media-header z-10">
         <span className="block w-[1px] h-[33vh] bg-gray-500"></span>
         <div className="grid gap-2">
           <a href="" title="GitHub">

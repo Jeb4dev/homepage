@@ -1,5 +1,5 @@
 import React from "react";
-import "./index.css";
+import ".././index.css";
 
 const Navbar = () => {
   return (
@@ -112,18 +112,18 @@ const Navbar = () => {
             </li>
             <li>
               <a
-                href="#projects"
-                className="block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-orange-700 md:p-0"
-              >
-                Projects
-              </a>
-            </li>
-            <li>
-              <a
                 href="#skills"
                 className="block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-orange-700 md:p-0"
               >
                 Skills
+              </a>
+            </li>
+            <li>
+              <a
+                  href="#projects"
+                  className="block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-orange-700 md:p-0"
+              >
+                Projects
               </a>
             </li>
             <li>

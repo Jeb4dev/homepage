@@ -9,7 +9,7 @@ interface Content {
 
 export const SkillCard = ({ content }: { content: Content }) => {
   return (
-    <div className="card-container flex flex-col">
+    <div className="card-container flex flex-col h-full">
       <div className="overflow-hidden w-full h-44 bg-cover bg-center">
         <img
           src={content.img}
@@ -36,7 +36,7 @@ export const SkillCard = ({ content }: { content: Content }) => {
                                 focus:ring-4 focus:outline-none focus:ring-orange-200 dark:focus:ring-orange-900"
           >
             <span className="font-bold relative px-5 py-1.5 w-full transition-all ease-in duration-75 bg-orange-500 group-hover:bg-opacity-0">
-              Learn more
+              Example projects
             </span>
           </button>
         </a>
