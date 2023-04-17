@@ -40,7 +40,7 @@ export const Contact = () => {
             />
             <p className="text-gray-500 text-xs -mx-14 xl:mx-14 py-2">
               Illustration designed by{" "}
-              <a href="https://www.freepik.com" className="hover:underline">
+              <a href="https://www.freepik.com" className="hover:underline" target="_blank">
                 Freepik
               </a>
             </p>

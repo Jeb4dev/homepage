@@ -77,6 +77,7 @@ export const About = () => {
               <a
                 href="https://www.freepik.com/free-vector/cloud-computing-security-abstract-concept-illustration_11668583.htm"
                 className="hover:underline"
+                target="_blank"
               >
                 vectorjuice / Freepik
               </a>
