@@ -1,7 +1,8 @@
-import React from "react";
+import React, {useEffect, useRef} from "react";
 import { SkillCard } from "./SkillCard";
 
 export const Skills = () => {
+
   const skillData = [
     {
       skill: "Backend",
@@ -50,12 +51,34 @@ export const Skills = () => {
     },
   ];
 
+  const mySkillsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (mySkillsRef.current == null) {
+        return;
+    }
+    const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting && mySkillsRef.current !== null) {
+              mySkillsRef.current.classList.add('visible');
+            }
+          });
+        },
+        { threshold: 0.3 }
+    );
+
+    observer.observe(mySkillsRef.current);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div id="skills" className="max-w-screen-xl mx-auto p-8 md:p-16">
-      <h1 className="text-4xl font-semibold whitespace-nowrap text-white py-8">
+    <div className="max-w-screen-xl mx-auto p-8 md:px-16">
+      <h1 className="text-4xl font-semibold whitespace-nowrap text-white">
         Skills
       </h1>
-      <div id="skills" className="skill-grid py-8">
+      <div id="skills" ref={mySkillsRef} className="skill-grid py-8 my-skills">
         {skillData.map((skills) => (
           <SkillCard key={skills.skill} content={skills} />
         ))}

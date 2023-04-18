@@ -22,9 +22,9 @@ export const BlockQuote = () => {
           <img
             className="w-6 h-6 rounded-full"
             src="https://cdn.discordapp.com/attachments/492188265487532032/1093527744471634031/1634820899033.jpg"
-            alt="picture of Mikko Hyppönen taken from his linked in"
+            alt="picture of Mikko Hyppönen taken from his linkedin"
           />
-          <div className="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
+                                                                  <div className="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
             <cite className="pr-3 font-medium text-gray-900 dark:text-white">
               Mikko Hyppönen
             </cite>

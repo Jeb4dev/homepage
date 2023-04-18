@@ -20,6 +20,7 @@ const FlipCard: React.FC<FlipCardProps> = ({ project }) => {
             className="h-full w-full rounded-xl object-cover shadow-xl shadow-black/40 group-hover:blur-sm"
             src={project.cover_img}
             alt="Illustrative image of project"
+            loading="lazy"
           />
         </div>
         <div className="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">

@@ -2,8 +2,8 @@ import React from "react";
 
 export const About = () => {
   return (
-    <div id="about" className="max-w-screen-xl mx-auto p-8 md:px-16">
-      <h1 className="self-center text-4xl font-semibold whitespace-nowrap text-white py-16">
+    <div className="max-w-screen-xl mx-auto p-8 md:px-16">
+      <h1 className="self-center text-4xl font-semibold whitespace-nowrap text-white">
         About
       </h1>
       <div className="overflow-hidden">
@@ -27,8 +27,8 @@ export const About = () => {
         </svg>
       </div>
 
-      <div className="md:flex row gap-8 items-center">
-        <div className="text-gray-300 md:text-justify w-full leading-relaxed">
+      <div className="md:flex row gap-8 items-center py-4">
+        <div className="text-gray-300 md:text-justify w-full leading-relaxed md:-mr-32 pb-8">
           <div className="py-4">
             I’m Jeb, a Finnish software developer and ethical hacker with a
             passion for night skies. I have been coding for approximately four
@@ -71,6 +71,7 @@ export const About = () => {
               src="/about.webp"
               alt="customer service illustration"
               className="xl:w-[100%] ml-36"
+              loading="lazy"
             />
             <p className="text-gray-500 text-xs ml-48 whitespace-nowrap">
               Illustration designed by{" "}

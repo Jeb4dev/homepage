@@ -64,7 +64,7 @@ export const Projects = () => {
         case "date-old":
           sortedData = [...sortData].sort(
             (a, b) =>
-              new Date(b.created).getTime() - new Date(a.created).getTime()
+              new Date(a.created).getTime() - new Date(b.created).getTime()
           );
           break;
         case "name-az":
@@ -87,17 +87,18 @@ export const Projects = () => {
   };
 
   return (
-    <div id="projects" className="max-w-screen-xl mx-auto p-8 md:px-16 h-full">
-      <h1 className="self-center text-4xl font-semibold whitespace-nowrap text-white py-16">
+    <div className="max-w-screen-xl mx-auto p-8 md:px-16 h-full">
+      <h1 className="self-center text-4xl font-semibold whitespace-nowrap text-white">
         Projects
       </h1>
-      <div>
+      <div className="pt-8">
         <div className="ui form ">
           <div className="field grid">
             <div className="flex flex-col md:flex-row inline-flex w-full gap-4">
               <div className="w-full md:w-[70%]">
                 <input
-                  className="block appearance-none w-full bg-zinc-900 text-white border hover:border-gray-500 px-4 py-3 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
+                  className="block appearance-none w-full bg-zinc-900 text-white border hover:border-gray-500 px-4 py-3
+                  pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
                   type="text"
                   placeholder="Search by project name..."
                   onChange={handleFilter}
@@ -107,11 +108,11 @@ export const Projects = () => {
                 <div className="inline-block relative w-full">
                   <select
                     onChange={handleSort}
-                    className="block appearance-none w-full bg-zinc-900 text-white border hover:border-gray-500 px-4 py-3 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
+                    defaultValue="featured"
+                    className="block appearance-none w-full bg-zinc-900 text-white border hover:border-gray-500 px-4
+                    py-3 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
                   >
-                    <option value="featured" selected>
-                      Featured
-                    </option>
+                    <option value="featured">Featured</option>
                     <option value="date-new">Newest first</option>
                     <option value="date-old">Oldest first</option>
                     <option value="name-az">A-Z</option>
@@ -139,7 +140,7 @@ export const Projects = () => {
       </div>
       <div className="project-grid py-8">
         {data?.slice(0, 6).map((project: Project) => (
-          <FlipCard project={project} />
+          <FlipCard key={project.id} project={project} />
         ))}
       </div>
     </div>

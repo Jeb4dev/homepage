@@ -4,8 +4,8 @@ import MatrixIcon from "./MatrixIcon";
 
 export const Contact = () => {
   return (
-    <div id="contact" className="max-w-screen-xl mx-auto p-8 md:px-16">
-      <h1 className="self-center text-4xl font-semibold whitespace-nowrap text-white py-8 md:py-16">
+    <div className="max-w-screen-xl mx-auto p-8 md:px-16">
+      <h1 className="self-center text-4xl font-semibold whitespace-nowrap text-white pb-8 md:pb-16">
         Contacts
       </h1>
 
@@ -31,12 +31,12 @@ export const Contact = () => {
       </div>
 
       <div className="md:flex row">
-        <div className="absolute md:relative">
+        <div className="absolute md:relative hidden md:block ">
           <div className="relative">
             <img
               src="/contactus.png"
               alt="customer service illustration"
-              className="-ml-32 mt-[calc(90vh-35vw)] md:-ml-32 md:mt-16 lg:-ml-32 lg:mt-4 xl:-ml-0 xl:mt-8 xl:h-[70%] xl:w-[70%]"
+              className="md:-ml-32 md:mt-16 lg:-ml-32 lg:mt-4 xl:-ml-0 xl:mt-8 xl:h-[70%] xl:w-[70%]"
             />
             <p className="text-gray-500 text-xs -mx-14 xl:mx-14 py-2">
               Illustration designed by{" "}
@@ -91,8 +91,8 @@ export const Contact = () => {
               possible. I look forward to hearing from you!
             </p>
           </div>
-          <div>
-            <div className="border border-solid">
+          <div className="pb-[30vw] md:pb-0">
+            <div className="border border-solid z-50 bg-zinc-800">
               <div className="flex gap-6 px-8 pt-8 pb-3">
                 <FaEnvelope className="w-6 h-6 text-gray-300" />
                 <a href="mailto:contacts@jeb4.dev" className="hover:underline">
@@ -130,6 +130,13 @@ export const Contact = () => {
                 </a>
               </div>
             </div>
+          </div>
+          <div className="absolute">
+            <img
+                src="/contactus.png"
+                alt="customer service illustration"
+                className="-ml-32 -mt-[30vw] block md:hidden"
+            />
           </div>
         </div>
       </div>
