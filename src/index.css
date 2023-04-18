@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Exo';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(./fonts/Exo-Regular.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Exo';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(./fonts/Exo-Medium.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Exo';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(./fonts/Exo-SemiBold.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Exo';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(./fonts/Exo-Bold.ttf) format('truetype');
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Exo", sans-serif;
+}
+
+@screen md {
+  :target::before {
+    content: "";
+    display: block;
+    height: 64px; /* Set this to the height of your navigation bar */
+    margin-top: -64px; /* Set this to the negative value of your navigation bar's height */
+  }
+}
+
+.project-grid {
+  @apply flex flex-col gap-8 items-center;
+}
+
+@screen md {
+  .project-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  }
+}
+
+.skill-grid {
+  @apply flex flex-col gap-8 items-center;
+}
+
+@screen sm {
+  .skill-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  }
+}
+
+.card-container {
+  @apply text-gray-700 w-[80vw] sm:w-full overflow-hidden rounded-2xl bg-zinc-100;
+}
+
+/* Arrow */
+
+.arrows {
+  width: 60px;
+  height: 72px;
+  position: absolute;
+  left: 50%;
+  margin-left: -30px;
+}
+
+.arrows path {
+  stroke: #EA580C;
+  fill: transparent;
+  stroke-width: 1px;
+  animation: arrow 2s infinite;
+  -webkit-animation: arrow 2s infinite;
+}
+
+@keyframes arrow
+{
+  0% {opacity:0}
+  40% {opacity:1}
+  80% {opacity:0}
+  100% {opacity:0}
+}
+
+@-webkit-keyframes arrow
+{
+  0% {opacity:0}
+  40% {opacity:1}
+  80% {opacity:0}
+  100% {opacity:0}
+}
+
+.arrows path.a1 {
+  animation-delay:-1s;
+  -webkit-animation-delay:-1s;
+}
+
+.arrows path.a2 {
+  animation-delay:-0.5s;
+  -webkit-animation-delay:-0.5s;
+}
+
+.arrows path.a3 {
+  animation-delay:0s;
+  -webkit-animation-delay:0s;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.my-skills {
+  opacity: 0;
+}
+
+.my-skills.visible {
+  animation: slideInFromRight 1s ease-out;
+  opacity: 1;
+}
