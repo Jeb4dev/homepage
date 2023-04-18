@@ -36,7 +36,12 @@ const Navbar = () => {
             ></path>
           </svg>
         </button>
-        <div className={"w-full md:block md:w-auto" + (navbarOpen ? " block" : " hidden")} id="navbar-dropdown">
+        <div
+          className={
+            "w-full md:block md:w-auto" + (navbarOpen ? " block" : " hidden")
+          }
+          id="navbar-dropdown"
+        >
           <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-transparent md:flex-row md:space-x-8 md:mt-0 md:border-0">
             <li>
               <a

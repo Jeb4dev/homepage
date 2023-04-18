@@ -1,8 +1,7 @@
-import React, {useEffect, useRef} from "react";
+import React, { useEffect, useRef } from "react";
 import { SkillCard } from "./SkillCard";
 
 export const Skills = () => {
-
   const skillData = [
     {
       skill: "Backend",
@@ -55,17 +54,17 @@ export const Skills = () => {
 
   useEffect(() => {
     if (mySkillsRef.current == null) {
-        return;
+      return;
     }
     const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting && mySkillsRef.current !== null) {
-              mySkillsRef.current.classList.add('visible');
-            }
-          });
-        },
-        { threshold: 0.3 }
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && mySkillsRef.current !== null) {
+            mySkillsRef.current.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.3 }
     );
 
     observer.observe(mySkillsRef.current);

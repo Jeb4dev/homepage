@@ -24,7 +24,9 @@ export const SkillCard = ({ content }: { content: Content }) => {
         </h4>
         <ul className="p-2 flex flex-wrap gap-x-5 gap-y-1 justify-start items-start text-gray-600">
           {content.skills.map((skill) => (
-            <li className="m-0 p-0" key={skill}>{skill}</li>
+            <li className="m-0 p-0" key={skill}>
+              {skill}
+            </li>
           ))}
         </ul>
       </div>
