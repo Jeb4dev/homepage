@@ -61,7 +61,7 @@ export const HeroSection = () => {
                                 bg-gradient-to-br from-orange-700 to-orange-400 group-hover:from-orange-700 group-hover:to-orange-400
                                 focus:ring-1 focus:outline-none focus:ring-orange-600"
                 >
-                  <span className="font-bold relative px-5 py-1.5 transition-all ease-in duration-75 bg-zinc-800 dark:bg-zinc-800 group-hover:bg-opacity-0">
+                  <span className="font-bold relative px-5 py-1.5 transition-all ease-in duration-75 bg-zinc-800 group-hover:bg-opacity-0">
                     Contact me
                   </span>
                 </button>

@@ -7,13 +7,13 @@ const Navbar = () => {
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="/" className="flex items-center">
           <img src="/lambda.webp" className="mr-3" alt="Lambda icon" height={32} width={32} />
-          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Jeb's portfolio</span>
+          <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">Jeb's portfolio</span>
         </a>
         <button
           data-collapse-toggle="navbar-dropdown"
           type="button"
-          className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-orange-700 focus:outline-none
-                        focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          className="inline-flex items-center p-2 ml-3 text-sm rounded-lg md:hidden focus:outline-none
+                        focus:ring-2 text-gray-400 hover:bg-gray-700 focus:ring-gray-600"
           aria-controls="navbar-dropdown"
           aria-expanded="false"
           onClick={() => setNavbarOpen(!navbarOpen)}

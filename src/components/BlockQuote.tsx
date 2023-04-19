@@ -14,7 +14,7 @@ export const BlockQuote = () => {
         />
       </svg>
       <blockquote>
-        <p className="text-2xl italic font-medium text-gray-900 dark:text-white">
+        <p className="text-2xl italic font-medium text-white">
           "We are no longer securing computers, we are securing society."
         </p>
       </blockquote>
@@ -27,9 +27,9 @@ export const BlockQuote = () => {
           height={24}
           width={24}
         />
-        <div className="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
-          <cite className="pr-3 font-medium text-gray-900 dark:text-white">Mikko Hyppönen</cite>
-          <cite className="pl-3 text-sm text-gray-500 dark:text-gray-400">CRO at WithSecure</cite>
+        <div className="flex items-center divide-x-2 :divide-gray-700">
+          <cite className="pr-3 font-medium text-white">Mikko Hyppönen</cite>
+          <cite className="pl-3 text-sm text-gray-400">CRO at WithSecure</cite>
         </div>
       </figcaption>
     </figure>

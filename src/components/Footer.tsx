@@ -19,7 +19,7 @@ export const Footer = () => {
           <div className="md:max-w-md md:col-span-2">
             <a href="/" className="flex items-center">
               <img src="/lambda.webp" className="mr-3" alt="Lambda icon" height={32} width={32} />
-              <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+              <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">
                 Jeb's portfolio
               </span>
             </a>
