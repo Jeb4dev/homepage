@@ -6,13 +6,13 @@ export const Skills = () => {
     {
       skill: "Backend",
       img: "https://cdn.pixabay.com/photo/2015/06/24/15/45/code-820275__340.jpg",
-      skills: ["Django", "Flask", "REST API", "SQL", "Directus", "TypeScript"],
+      skills: ["REST", "Flask", "Django", "Python", "TypeScript", "SQL"],
       learnMore: "backend",
     },
     {
       skill: "Frontend",
-      skills: ["HTML5", "CSS3", "Tailwind", "TS", "React", "Vue", "Nuxt", "WordPress"],
-      img: "https://cdn.pixabay.com/photo/2018/05/04/20/01/website-3374825__340.jpg",
+      skills: ["Vue", "Nuxt", "React", "Tailwind", "TypeScript", "WordPress"],
+      img: "https://img.freepik.com/free-photo/html-css-collage-concept-with-person_23-2150061963.jpg?w=1380",
       learnMore: "frontend",
     },
     {
@@ -23,19 +23,19 @@ export const Skills = () => {
     },
     {
       skill: "DevOps",
-      skills: ["Docker", "Agile", "Scrum", "CI/CD", "Git", "Ansible"],
-      img: "https://thumbs.dreamstime.com/b/devops-agile-development-concept-virtual-screen-devops-agile-development-concept-virtual-screen-145015185.jpg",
+      skills: ["Git", "Agile", "Scrum", "CI/CD", "Docker", "Ansible", "Vagrant"],
+      img: "https://img.freepik.com/free-photo/rpa-concept-with-blurry-hand-touching-screen_23-2149311914.jpg?w=1380&t=st=1681861891~exp=1681862491~hmac=4cfb53602e41fe16870a6c7bf3abe1eee8d7e70bae0d4f8f0ba32bc069341a4f",
       learnMore: "devops",
     },
     {
       skill: "Cloud Computing",
-      skills: ["AWS", "Azure", "Linux"],
+      skills: ["Azure", "AWS", "Linux"],
       img: "https://cdn.pixabay.com/photo/2021/08/01/19/00/cloud-6515064_960_720.jpg",
       learnMore: "cloud-computing",
     },
     {
       skill: "Cyber Security",
-      skills: ["OWASP", "Offencive Security", "Web", "Burbsuite", "Wireshark"],
+      skills: ["Web Security", "OWASP", "nmap", "Burbsuite", "Wireshark", "Networking"],
       img: "https://cdn.pixabay.com/photo/2018/04/22/22/57/hacker-3342696__340.jpg",
       learnMore: "cyber",
     },
