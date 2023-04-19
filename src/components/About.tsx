@@ -29,10 +29,10 @@ export const About = () => {
         <div className="text-gray-300 md:text-justify w-full leading-relaxed md:-mr-32 pb-8">
           <div className="py-4">
             I’m Jeb, a Finnish software developer and ethical hacker with a passion for night skies. I have been
-            programming for approximately four years, working on a  variety of projects. One of my hobbies is
-            photography, particularly capturing the beauty of the stars and moon. I also like to cook, play video games,
-            ice skating on frozen lakes in winter. I also listen to IT and cyber security podcasts. Some of my favorites
-            are "Darknet Diaries", "Command Line Heroes" and "Herrasmieshakkerit".
+            programming for approximately four years, working on a variety of projects. One of my hobbies is
+            photography, particularly capturing the beauty of the stars and moon. I also like to cook, play video games
+            and ice skating on frozen lakes in winter. I also listen to IT and cyber security podcasts. Some of my
+            favorites are "Darknet Diaries", "Command Line Heroes" and "Herrasmieshakkerit".
           </div>
           <div className="py-4">
             I have four years of experience in web, mobile, and desktop development using various languages and
