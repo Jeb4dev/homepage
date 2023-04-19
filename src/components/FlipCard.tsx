@@ -1,5 +1,6 @@
 import React from "react";
 import { Project, Tag } from "./Projects";
+import { FaUsers, FaUser } from "react-icons/fa";
 
 interface FlipCardProps {
   project: Project;
@@ -27,7 +28,7 @@ const FlipCard: React.FC<FlipCardProps> = ({ project }) => {
           <div className="flex min-h-full flex-col items-center">
             <h1 className="text-3xl font-bold pt-8 pb-2">{project.name}</h1>
             <p className="text-lg py-2">{formattedDate}</p>
-            <p className="text-base py-4">I am deeply sorry, the description of project in not yet available.</p>
+            <p className="text-base py-4">Unfortunately the description of project in not yet available.</p>
             <div>
               <a
                 href={project.demo_url ? project.demo_url : ""}
@@ -63,10 +64,10 @@ const FlipCard: React.FC<FlipCardProps> = ({ project }) => {
           <div className="absolute top-4 right-4 right-0">
             {/*  team or solo project */}
             <p
-              className="text-2xl font-bold text-orange-700 hover:cursor-pointer"
+              className="text-2xl font-bold text-white hover:cursor-pointer"
               title={project.team ? "Team Project" : "Solo Project"}
             >
-              {project.team ? "T" : "S"}
+              {project.team ? <FaUsers/> : <FaUser/>}
             </p>
           </div>
         </div>
