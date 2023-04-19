@@ -196,7 +196,7 @@ export const Projects = () => {
         </div>
       </div>
       <div className="project-grid py-8">
-        {data?.slice(0, 6).map((project: Project) => (
+        {data?.slice(0, 9).map((project: Project) => (
           <FlipCard key={project.id} project={project} />
         ))}
       </div>
