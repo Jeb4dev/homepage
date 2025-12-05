@@ -1,26 +1,26 @@
-import { useCallback } from "react";
-import type { Engine } from "tsparticles-engine";
-import Particles from "react-particles";
+import { useEffect, useState } from "react";
+import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadFull } from "tsparticles";
 
 export const MyParticles = () => {
-  const particlesInit = useCallback(async (engine: Engine) => {
-    // you can initialize the tsParticles instance (engine) here, adding custom shapes or presets
-    // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-    // starting from v2 you can add only the features you need reducing the bundle size
-    await loadFull(engine);
+  const [init, setInit] = useState(false);
+
+  useEffect(() => {
+    initParticlesEngine(async (engine) => {
+      await loadFull(engine);
+    }).then(() => {
+      setInit(true);
+    });
   }, []);
 
-  const particlesLoaded = useCallback(async () => {}, []);
+  if (!init) {
+    return null;
+  }
+
   return (
     <Particles
       id="tsparticles"
-      init={particlesInit}
-      loaded={particlesLoaded}
       options={{
-        container: {
-          id: "hero-div",
-        },
         background: {
           color: {
             value: "#000000",
@@ -30,7 +30,9 @@ export const MyParticles = () => {
         fpsLimit: 120,
         interactivity: {
           events: {
-            resize: true,
+            resize: {
+              enable: true,
+            },
           },
           modes: {
             push: {
@@ -69,7 +71,6 @@ export const MyParticles = () => {
           number: {
             density: {
               enable: true,
-              area: 800,
             },
             value: 20,
           },

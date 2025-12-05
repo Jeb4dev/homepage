@@ -2,16 +2,18 @@ import React, { useEffect, useRef } from "react";
 import { SkillCard } from "./SkillCard";
 
 export const Skills = () => {
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+
   const skillData = [
     {
       skill: "Backend",
       img: "https://cdn.pixabay.com/photo/2015/06/24/15/45/code-820275__340.jpg",
-      skills: ["REST", "Flask", "Django", "Python", "TypeScript", "SQL"],
+      skills: ["REST", "Flask", "Django", "Python", "TypeScript", "SQL", "Golang"],
       learnMore: "backend",
     },
     {
       skill: "Frontend",
-      skills: ["Vue", "Nuxt", "React", "Tailwind", "TypeScript", "WordPress"],
+      skills: ["Vue", "Nuxt", "React", "Svelte", "Tailwind", "TypeScript", "WordPress"],
       img: "https://img.freepik.com/free-photo/html-css-collage-concept-with-person_23-2150061963.jpg?w=1380",
       learnMore: "frontend",
     },
@@ -44,21 +46,22 @@ export const Skills = () => {
   const mySkillsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (mySkillsRef.current == null) {
-      return;
-    }
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting && mySkillsRef.current !== null) {
-            mySkillsRef.current.classList.add("visible");
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
           }
         });
       },
-      { threshold: 0.3 }
+      { threshold: 0.2 }
     );
 
-    observer.observe(mySkillsRef.current);
+    cardRefs.current.forEach((card) => {
+      if (card) {
+        observer.observe(card);
+      }
+    });
 
     return () => observer.disconnect();
   }, []);
@@ -66,9 +69,16 @@ export const Skills = () => {
   return (
     <div className="max-w-screen-xl mx-auto p-8 md:px-16">
       <h1 className="text-4xl font-semibold whitespace-nowrap text-white">Skills</h1>
-      <div id="skills" ref={mySkillsRef} className="skill-grid py-8 my-skills">
-        {skillData.map((skills) => (
-          <SkillCard key={skills.skill} content={skills} />
+      <div id="skills" ref={mySkillsRef} className="skill-grid py-8">
+        {skillData.map((skills, index) => (
+          <div
+            key={skills.skill}
+            ref={(el) => { cardRefs.current[index] = el; }}
+            className="skill-card-wrapper"
+            style={{ transitionDelay: `${index * 100}ms` }}
+          >
+            <SkillCard content={skills} />
+          </div>
         ))}
       </div>
     </div>

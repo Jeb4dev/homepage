@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 @font-face {
   font-family: 'Exo';
@@ -37,7 +35,7 @@ body {
   font-family: "Exo", sans-serif;
 }
 
-@screen md {
+@media (min-width: 768px) {
   :target::before {
     content: "";
     display: block;
@@ -47,10 +45,13 @@ body {
 }
 
 .project-grid {
-  @apply flex flex-col gap-8 items-center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
 }
 
-@screen md {
+@media (min-width: 768px) {
   .project-grid {
     display: grid;
     gap: 2rem;
@@ -59,10 +60,13 @@ body {
 }
 
 .skill-grid {
-  @apply flex flex-col gap-8 items-center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
 }
 
-@screen sm {
+@media (min-width: 640px) {
   .skill-grid {
     display: grid;
     gap: 2rem;
@@ -71,7 +75,30 @@ body {
 }
 
 .card-container {
-  @apply text-gray-700 w-[80vw] sm:w-full overflow-hidden rounded-2xl bg-zinc-100;
+  color: rgb(55 65 81);
+  width: 80vw;
+  overflow: hidden;
+  border-radius: 1rem;
+  background-color: rgb(244 244 245);
+}
+
+@media (min-width: 640px) {
+  .card-container {
+    width: 100%;
+  }
+}
+
+/* Skill card animations */
+.skill-card-wrapper {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  height: 100%;
+}
+
+.skill-card-wrapper.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Arrow */
